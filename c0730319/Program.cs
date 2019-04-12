@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace c0730319
 {
-    class Program2
+    class Program
     {
         static void Main(string[] args)
         {
-
             Program a = new Program();
 
             Console.WriteLine(a.MyfunctionA("Ada Lovelace wrote the first algorithm designed for processing by an Analytical engine"));
