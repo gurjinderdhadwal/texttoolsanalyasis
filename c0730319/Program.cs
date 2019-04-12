@@ -8,35 +8,35 @@ namespace c0730319
 {
     class Program2
     {
-        string[] Letters = new string[26] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
-
-        public static void Main()
+        static void Main(string[] args)
         {
 
-            Program2 orange = new Program2();
-            Console.WriteLine(orange.Gematria("universe"));
+            Program a = new Program();
+
+            Console.WriteLine(a.MyfunctionA("Ada Lovelace wrote the first algorithm designed for processing by an Analytical engine"));
             Console.ReadLine();
-            //..
+
         }
-        public int Gematria(string word)
+        public string MyfunctionA(string input)
         {
-            int GematriaValue = 0;
-            for (int i = 0; i < word.Length; i++)
+            string[] words = input.Split(' ');
+            int wordArraylength = words.Length;
+            int[] wordsLength = new int[wordArraylength];
+
+            for (int i = 0; i < words.Length; i++)
             {
-                GematriaValue += LetterValue(word[i].ToString());
+                wordsLength[i] = words[i].Length;
             }
 
-            return GematriaValue;
-        }
-        public int LetterValue(string letter)
-        {
-            int x = 0;
-            while (Letters[x] != letter)
+            string currentWord = words[0];
+            string nextWord;
+
+            for (int y = 0; y < words.Length - 1; y++)
             {
-                if (Letters[x++] == letter)
-                    return -1;
+                currentWord = words[y];
+                nextWord = words[y + 1];
             }
-            return x + 1;
+            return currentWord;
         }
     }
 }
